@@ -1,0 +1,13 @@
+en:
+  hello: "Hello world"
+  common:
+    error: "An error occurred. Please try again later."
+    create: "%{model_name} was successfully created."
+    update: "%{model_name} was successfully updated."
+    destroy: "%{model_name} was successfully archive."
+    unarchive: "Record was successfully marked unarchive"
+  bulk_actions:
+    active: "Selected records have been marked active."
+    inactive: "Selected records have been marked inactive."
+    destroy: "Selected records have been marked archive."
+    unarchive: "Selected records have been marked unarchive."

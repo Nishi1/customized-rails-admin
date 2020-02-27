@@ -1,0 +1,32 @@
+<table width="650" style="border:1px solid #ccc; position: relative;">
+    <tbody>
+        <tr style="display:table-row;width:100%;">
+            <td width="100%" colspan="2">
+                <div style="width:100%;background-color:#3C81CE; height: 113px;text-align:center;">
+                    <h1 style="width:auto;display:inline-block; position: absolute; top: -32px;padding:10px;">                       
+                        <img style="width:57px;" alt="<%= WEBSITE_NAME %>" src="<%= root_url+'assets/admin_logo.png'%>" />
+                    </h1>
+                </div>
+            </td>
+        </tr>
+        <tr style="display:table-row;width:100%;">
+            <td width="100%" style="padding:20px;border-bottom:1px dashed #e2e2e2;" colspan="2">				
+                <h2 style="font-family:arial;font-size:
+                    14px;color:#1a1a1a;line-height:28px;margin:0;">Hi <%= @name.present? ? @name.titlecase : "User" %></h2>
+                <p style="padding:0px 0 0 50px;color:#666;font-family:arial;font-size:12px;line-height:18px;font-style:italic;margin:0;">
+                <p style="font-family:arial;font-size:12px;"><%= "Your player account has been created on #{WEBSITE_NAME} with the below details:" %></p>
+                <p style="font-family:arial;font-size:12px;"><%= "Username: #{@data['email']}" %></p>
+                <p style="font-family:arial;font-size:12px;"><%= "Password: #{@data['password']}" %></p>
+                </p>
+            </td>
+        </tr>
+        <tr>	
+            <td colspan="2" style="padding:20px;">
+                <p style="font-family:arial;font-size:12px; margin:0;">Regards,</p>
+                <p style="font-family:arial;font-size:12px; margin:0;"><%= WEBSITE_NAME %></p>
+                </p>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

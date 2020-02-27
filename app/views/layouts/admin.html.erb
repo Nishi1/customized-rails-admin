@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rails Admin</title>
+  <link rel="icon" href="/assets/favicon.ico" type="image/ico">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <%= stylesheet_link_tag 'admin' %>
+  <%= javascript_include_tag 'frontend/jquery.min', 'jquery.validate.min' %>
+  <%= csrf_meta_tags %>
+  <script>
+      var BASE_URL = '<%=  request.base_url %>';
+  </script>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <%= render "layouts/elements/admin/header" %>
+
+  <%= render "layouts/elements/admin/sidebar" %>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+      <%= render "layouts/elements/admin/flash" %>
+      <%= yield %>
+    </section>
+    <!-- /.content -->
+  </div>
+  <%= render "layouts/elements/admin/popups" %>
+  <%= render "layouts/elements/admin/footer" %>
+</div>
+<!-- ./wrapper -->
+<!-- jQuery 3 -->
+<%= javascript_include_tag 'admin', :defer => true %>
+</body>
+</html>
+

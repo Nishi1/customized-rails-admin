@@ -1,0 +1,28 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu" data-widget="tree"> 
+      <li class="<%= controller.controller_name == 'homes' ? "active" : "" %>">
+        <%= link_to admin_root_path, :title => "Dashboard" do %>
+          <i class="fa fa-table"></i> <span>Dashboard</span>
+        <% end %>
+      </li>  
+      <li class="<%= controller.controller_name == 'organizations' ? "active" : "" %>">
+        <%= link_to admin_organizations_path, :title => "Manage Organizations" do %>
+          <i class="fa fa-table"></i> <span>Manage Organizations</span>
+        <% end %>
+      </li>
+      <li class="<%= controller.controller_name == 'cms_pages' ? "active" : "" %>">
+        <%= link_to admin_cms_pages_path, :title => "Manage Cms Pages" do %>
+          <i class="fa fa-book"></i> <span>Manage Cms Pages</span>
+        <% end %>
+      </li>
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
+
+

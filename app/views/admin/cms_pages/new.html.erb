@@ -1,0 +1,87 @@
+<script type="text/javascript" src="/assets/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/assets/ckeditor/config.js"></script>
+<%= link_to '<i class="fa fa-arrow-circle-left"></i> BACK'.html_safe, :back, class: "back-btn" %>
+<section class="content-header">
+  <ol class="breadcrumb custom-breadcrumbs">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
+  <div class="box">
+    <div class="box-header">
+      <h2 class="box-title"><%= @page_title %></h2>
+    </div>
+    <div class="box-body">
+      <%= form_for @model_data, :url => send("admin_#{controller_name}_path"), method: :post, :html => {:id => 'add-new-university'} do |f| %>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <%= f.label :name, for: "name" do %>
+              Name<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :name, class: "form-control", minlength: 2, maxlength: 50 %>
+            <% msg = show_errors(@model_data, :name) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+          <div class="col-sm-6 form-group">
+            <%= f.label :meta_title, for: "meta_title" do %>
+              Meta Title<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :meta_title, class: "form-control" %>
+            <% msg = show_errors(@model_data, :meta_title) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <%= f.label :content, for: "content" do %>
+              Content<span class="required">*</span>
+            <% end %>
+            <%= f.text_area :content, class: "form-control ckeditor" %>
+            <% msg = show_errors(@model_data, :content) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <%= f.label :seo_url, for: "seo_url" do %>
+              Seo Url<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :seo_url, class: "form-control" %>
+            <% msg = show_errors(@model_data, :seo_url) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+          <div class="col-sm-6 form-group">
+            <%= f.label :meta_desc, for: "meta_desc" do %>
+              Meta Description<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :meta_desc, class: "form-control" %>
+            <% msg = show_errors(@model_data, :meta_desc) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <%= f.label :meta_keyword, for: "meta_keyword" do %>
+              Meta Keyword<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :meta_keyword, class: "form-control" %>
+            <% msg = show_errors(@model_data, :meta_keyword) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+          <div class="col-sm-6 form-group">
+            <label>Status<span class="required">*</span></label>
+            <div class="custom-select">
+              <% options = [['Active', true], ['Inactive', false]] %>
+              <%= f.select :status, options, {:include_blank => "Please Select"}, {:class => "form-control "} %>
+              <% msg = show_errors(@model_data, :status) %>
+              <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Add #{controller_name.classify.titlecase}", class: "btn bg-olive" %>
+          <%= link_to 'Cancel', :back, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

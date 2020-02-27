@@ -1,0 +1,42 @@
+<thead>
+	<tr class="pretty">                 
+	  <th><%= check_box_tag 'main_checkbox', '', false, class: 'parent-checkbox' %></th>
+	  <th><%= sortable "name","Name", params[:search].present? ? params[:search] : nil %></th>             
+	  <th><%= sortable "phone","Phone", params[:search].present? ? params[:search] : nil %></th>
+	  <th><%= sortable "address","Address", params[:search].present? ? params[:search] : nil %></th> 
+	  <th><%= sortable "city","City", params[:search].present? ? params[:search] : nil %></th>
+	  <th><%= sortable "state","State", params[:search].present? ? params[:search] : nil %></th>
+	  <th><%= sortable "zip","Zip", params[:search].present? ? params[:search] : nil %></th>
+	  <th><%= sortable "status","Status", params[:search].present? ? params[:search] : nil %></th>
+    <th class="text-center">Actions</th>
+	</tr>
+</thead>
+<tbody class="main_listing">
+<% if @model_data.present?  %>
+    <% @model_data.each do |university| %>
+      <tr>    
+        <td class="first-column"><%= check_box_tag 'ids[]', university.id, false, :class => 'child-checkbox' %></td>     
+        <td><%=university.name.present? ? university.name : "N-A" %></td>                        
+        <% if university.phone.present? %>
+            <td><a href="tel:<%=university.phone %>"><%= university.phone  %></a></td>
+        <% else %>
+          <td>N-A</td>
+        <% end %>  
+        <td><%= university.address.present? ? university.address : "N-A" %></a></td>
+        <td><%= university.city.present? ? university.city : "N-A" %></a></td>
+        <td><%= university.state.present? ? university.state : "N-A" %></a></td>
+        <td><%= university.zip.present? ? university.zip : "N-A" %></a></td>
+        <td><%= university.status == true ? "<i class='fa fa-check' title='Active'></i>".html_safe : "<i class='fa fa-ban' title='Inactive'></i>".html_safe %></a></td>
+        <td class="text-center">                       
+            <%= link_to '', edit_admin_organization_path(university.id), title: "Edit", class:"fa fa-edit" %>
+             <%= link_to '',"javascript:void(0);", {title: "Archive", "data-attr"=>university.id, "data-attr-model"=>controller_name.classify ,:class => 'fa fa-trash delete-btn delete-admin-info', :id=>'delete-admin-info'  } %>
+        </td>
+      </tr>
+  <%end%>
+<% else %>
+     <tr>             
+        <td colspan = 9><center>No records found</center></td>
+        </td>
+    </tr>
+<% end %>
+ </tbody>

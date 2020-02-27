@@ -1,0 +1,17 @@
+en:
+  model_data:
+    common:
+      error: "An error occurred. Please try again later."    
+      permission_error: "Permission denied, You can not create this record."
+    create:
+      success: "%{model_name} was successfully created." 
+    update:
+      success: "%{model_name} was successfully updated." 
+    destroy:
+      success: "%{model_name} was successfully archived."       
+  change_password:
+    update:
+      success: "You have successfully changed your password." 
+    failure:
+      invalid_old_password : "Old Password is not correct."
+      password_is_not_match : "New Password and confirm password does not match."        

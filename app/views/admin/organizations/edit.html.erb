@@ -1,0 +1,91 @@
+<%= link_to '<i class="fa fa-arrow-circle-left"></i> BACK'.html_safe, :back, class: "back-btn" %>
+<section class="content-header">
+  <ol class="breadcrumb custom-breadcrumbs">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
+  <div class="box">
+    <div class="box-header">
+      <h2 class="box-title"><%= @page_title %></h2>
+    </div>
+    <div class="box-body">
+      <%= form_for @model_data, :url => send("admin_#{controller_name.singularize}_path"), method: :patch, :html => {:id => 'edit-admin'} do |f| %>
+        <%= hidden_field_tag :existing_data, @model_data.name, :id => "existing_data" %>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <%= f.label :name, for: "name" do %>
+              Name<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :name, class: "form-control", minlength: 2, maxlength: 50 %>
+            <% msg = show_errors(@model_data, :name) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+          <div class="col-sm-6 form-group">
+            <%= f.label :phone, for: "phone" do %>
+              Phone<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :phone, class: "form-control", maxlength: 10 %>
+            <% msg = show_errors(@model_data, :phone) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <%= f.label :address, for: "address" do %>
+              Address<span class="required">*</span>
+            <% end %>
+            <%= f.text_area :address, class: "form-control", minlength: 2, maxlength: 500 %>
+            <% msg = show_errors(@model_data, :address) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+          <div class="col-sm-6 form-group">
+            <%= f.label :city, for: "city" do %>
+              City<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :city, class: "form-control" %>
+            <% msg = show_errors(@model_data, :city) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <%= f.label :state, for: "state" do %>
+              State<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :state, class: "form-control"%>
+            <% msg = show_errors(@model_data, :state) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+          <div class="col-sm-6 form-group">
+            <%= f.label :zip, for: "zip" do %>
+              Zip Code<span class="required">*</span>
+            <% end %>
+            <%= f.text_field :zip, class: "form-control" %>
+            <% msg = show_errors(@model_data, :zip) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <label>Status<span class="required">*</span></label>
+            <div class="custom-select">
+              <% options = [['Active', true], ['Inactive', false]] %>
+              <%= f.select :status, options, {:include_blank => "Please Select"}, {:class => "form-control "} %>
+              <% msg = show_errors(@model_data, :status) %>
+              <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+            </div>
+          </div>
+          <div class="col-sm-6 form-group">
+            <%= f.label :billing_address, for: "billing_address" do %>
+              Billing Address
+            <% end %>
+            <%= f.text_area :billing_address, class: "form-control", minlength: 2, maxlength: 500 %>
+            <% msg = show_errors(@model_data, :billing_address) %>
+            <label class='error <%= msg.present? ? 'show_class' : 'hide_class' %>'><%= msg %></label>
+          </div>
+        </div>
+        <%= f.submit "Update", class: "btn bg-olive" %>
+        <%= link_to 'Cancel', admin_organizations_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</section>

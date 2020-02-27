@@ -1,0 +1,2 @@
+class ApplicationError < ApplicationRecord
+end
