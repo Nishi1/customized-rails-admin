@@ -32,7 +32,7 @@ $ rake db:seed
 $ rails s
 ```
 
-Now open your browser, navigate to:
+Now open your browser and navigate to:
 ```
 'localhost:300' for public access
 'localhost:300/admin/sign_in' for admin access & login using the admin account that is by default created using seed file. 
