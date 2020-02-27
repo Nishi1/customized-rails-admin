@@ -25,7 +25,7 @@ $ bundle install
 ```
 
 Setup database and start the rails.
-```
+```sh
 $ rake db:create
 $ rake db:migrate
 $ rake db:seed
