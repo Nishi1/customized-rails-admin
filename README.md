@@ -11,7 +11,7 @@ Project revisions are managed in **customized-rails-admin** repository on privat
 ### Installation
 
 
-Customized Rails Admin requires [Ruby](https://www.ruby-lang.org/en/documentation/installation/) v2.4.0  and Rails 5.2.3 to run.
+Customized Rails Admin requires [Ruby](https://www.ruby-lang.org/en/documentation/installation/) v2.4.0  and Rails 5.2.3 or higher to run.
 
 ```
 Clone the git repository and install packages.
