@@ -1,6 +1,0 @@
-<option value="">Please select</option>
-<% if @players.present? %>
-<% @players.each do |player| %>
-<option <%= (selected_player_id.include?(player.id)) ? "selected" : "" %> value="<%= player.id %>"><%= player.name %></option>
-<% end %>
-<% end %>
