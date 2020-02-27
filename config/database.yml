@@ -8,8 +8,8 @@ default: &default
   adapter: mysql2
   pool: 5
   timeout: 5000
-  username: <%= ENV['SWEEPMEDIA_DB_USER'] || "root" %>
-  password: <%= ENV['SWEEPMEDIA_DB_PASS'] || "ztech@44" %>
+  username: <%= ENV['RAILSADMIN_DB_USER'] || "root" %>
+  password: <%= ENV['RAILSADMIN_DB_PASS'] || "password" %>
   host: localhost 
 
 development:
@@ -24,8 +24,8 @@ qa:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  #<<: *default
-  #database: sweep_media_test
+  <<: *default
+  database: rails_admin_test
 
 production:
   <<: *default
