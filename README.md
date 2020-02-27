@@ -1,6 +1,6 @@
 # Customized Rails Admin
 
-This app is used to walk developers through the basic Rails Authentication using devise and CRUD operation.
+This app is used to walk developers through the basic Rails Authentication using devise and CRUD operation for admin portal.
 
 # Technologies
   - Rails
@@ -21,7 +21,7 @@ $ cd customized-rails-admin
 $ bundle install
 ```
 Setup database and start the rails.
-```sh
+```
 $ rake db:create
 $ rake db:migrate
 $ rake db:seed
