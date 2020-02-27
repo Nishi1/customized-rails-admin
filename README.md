@@ -2,6 +2,11 @@
 
 This app is used to walk developers through the basic Rails Authentication using devise and CRUD operation for admin portal.
 
+## Demo
+ 
+<img src="public/demo.gif" alt="calendar_image" width="500" height="300">
+
+
 # Technologies
   - Rails
   - Mysql  
