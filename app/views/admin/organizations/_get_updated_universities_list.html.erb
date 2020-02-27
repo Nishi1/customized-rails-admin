@@ -1,4 +1,0 @@
-<option value="">Please select</option>
-<% @universities.each do |university| %>
-<option <%= (selected_university_id == university.id) ? "selected" : "" %> value="<%= university.id %>"><%= university.name %></option>
-<% end %>
