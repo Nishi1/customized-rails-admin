@@ -18,7 +18,7 @@ Customized Rails Admin requires [Ruby](https://www.ruby-lang.org/en/documentatio
 
 ```
 Clone the git repository and install packages.
-```
+
 $ git clone "https://github.com/Nishi1/customized-rails-admin.git"
 $ cd customized-rails-admin
 $ bundle install
