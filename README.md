@@ -36,7 +36,7 @@ Now open your browser and navigate to:
 ```
 localhost:3000 for public access
 localhost:3000/admin/sign_in for admin access & login using the admin account that is by default 
-reated using seed file. 
+created using seed file. 
 
 Use the following credentials for admin login: 
 username: admin@example.com 
